@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../App.css";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +32,11 @@ function App() {
       <button onClick={addList}>
         追加
       </button>
+      <Link to="/">
+        <button>
+          ホームへ
+        </button>
+      </Link>
     </div>
   );
 }

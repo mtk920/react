@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 function App() {
@@ -65,6 +66,11 @@ function App() {
       <button onClick={addList}>
         追加
       </button>
+      <Link to="/create">
+        <button>
+          新規作成ページへ
+        </button>
+      </Link>
     </div>
   );
 }
