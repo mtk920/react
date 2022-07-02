@@ -14,7 +14,20 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
-  return state;
+  switch (action.type) {
+    case "DONE_LIST":
+      return {
+        lists: state.lists.map((list) => {
+          if (list.name !== action.payload) return list;
+          return {
+            ...list,
+            complete: true,
+          };
+        }),
+      };
+    default:
+      return state;
+  }
 };
 
 const store = createStore(reducer);
