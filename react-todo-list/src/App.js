@@ -8,7 +8,9 @@ function App() {
   const doneList = (name) => {
     dispatch({ type: "DONE_LIST", payload: name});
   };
-  
+  const deleteList = (name) => {
+    dispatch({ type: "DELETE_LIST", payload: name});
+  };
 
   return (
     <div className="App">
@@ -26,6 +28,9 @@ function App() {
               {list.name}
               <button onClick={() => doneList(list.name)}>
                 完了
+              </button>
+              <button onClick={() => deleteList(list.name)}>
+                削除
               </button>
             </li>
           ))}
