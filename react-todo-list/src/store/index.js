@@ -29,6 +29,10 @@ const reducer = (state = initialState, action) => {
         return {
           lists: state.lists.filter((list) => list.name !== action.payload)
         };
+      case "ADD_LIST":
+        return {
+          lists: [...state.lists, action.payload],
+        };
     default:
       return state;
   }
