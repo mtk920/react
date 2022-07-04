@@ -3,10 +3,12 @@ import { createStore } from "redux";
 const initialState = {
   lists: [
     {
+      id: 1,
       name: "ブログを確認",
       complete: false,
     },
     {
+      id: 2,
       name: "メールの返信",
       complete: false,
     },

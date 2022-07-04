@@ -20,12 +20,18 @@ function App() {
     dispatch({
       type: "ADD_LIST",
       payload: {
+        id,
         name,
         complete,
       },
     });
     setName("");
+    setId(id + 1);
   }
+
+  const lastId = lists[lists.length - 1].id;
+  const nextId = lastId + 1;
+  const [id, setId] = useState(nextId)
   const [name, setName] = useState("");
   const [complete, setComplete] = useState(false);
 
