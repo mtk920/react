@@ -49,6 +49,11 @@ function App() {
               <button onClick={() => deleteList(list.name)}>
                 削除
               </button>
+              <Link to={'/edit/' + list.id}>
+                <button>
+                  編集
+                </button>
+              </Link>
             </li>
           ))}
       </ul>
@@ -59,7 +64,14 @@ function App() {
         {lists
           .filter((list) => list.complete === true)
           .map((list, index) => (
-            <li key={index}>{list.name}</li>
+            <li key={index}>
+              {list.name}
+              <Link to={'/edit/' + list.id}>
+                <button>
+                  編集
+                </button>
+              </Link>
+            </li>
           ))}
       </ul>
       <input type="text" value={name} onChange={inputText} />
