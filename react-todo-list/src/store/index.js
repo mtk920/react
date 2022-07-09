@@ -38,7 +38,6 @@ const reducer = (state = initialState, action) => {
         id: state.nextId,
         ...action.payload
       };
-      console.log(action.payload);
       const addedList = [
         ...state.lists,
         action.payload,
