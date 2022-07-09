@@ -13,6 +13,11 @@ function App() {
       <button>
         新規作成
       </button>
+      <Link to="/">
+        <button>
+          ホームへ
+        </button>
+      </Link>
     </div>
   );
 }
