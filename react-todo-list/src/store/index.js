@@ -13,6 +13,7 @@ const initialState = {
       complete: false,
     },
   ],
+  nextId: 3,
 };
 
 const reducer = (state = initialState, action) => {
@@ -32,8 +33,13 @@ const reducer = (state = initialState, action) => {
           lists: state.lists.filter((list) => list.name !== action.payload)
         };
       case "ADD_LIST":
+        action.payload = {
+          id: state.nextId,
+          ...action.payload
+        };
         return {
           lists: [...state.lists, action.payload],
+          nextId: state.nextId + 1,
         };
     default:
       return state;

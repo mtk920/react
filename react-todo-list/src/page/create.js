@@ -20,6 +20,7 @@ function App() {
     });
     setName("");
   }
+
   const [name, setName] = useState("");
   const [complete, setComplete] = useState(false);
 
