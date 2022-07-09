@@ -7,13 +7,12 @@ function App() {
   return (
     <div className="App">
       <h1>
-        React x TypeScript TODO
+        新規作成
       </h1>
-      <Link to="/create">
-        <button>
-          新規作成
-        </button>
-      </Link>
+      <input type="text"></input>
+      <button>
+        新規作成
+      </button>
     </div>
   );
 }
