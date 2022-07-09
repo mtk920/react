@@ -28,19 +28,37 @@ const reducer = (state = initialState, action) => {
           };
         }),
       };
-      case "DELETE_LIST":
-        return {
-          lists: state.lists.filter((list) => list.name !== action.payload)
-        };
-      case "ADD_LIST":
-        action.payload = {
-          id: state.nextId,
-          ...action.payload
-        };
-        return {
-          lists: [...state.lists, action.payload],
-          nextId: state.nextId + 1,
-        };
+    case "DELETE_LIST":
+      return {
+        lists: state.lists.filter((list) => list.name !== action.payload),
+        nextId: state.nextId,
+      };
+    case "ADD_LIST":
+      action.payload = {
+        id: state.nextId,
+        ...action.payload
+      };
+      console.log(action.payload);
+      const addedList = [
+        ...state.lists,
+        action.payload,
+      ];
+      return {
+        lists: addedList,
+        nextId: state.nextId + 1,
+      };
+    case "EDIT_LIST":
+      console.log('aaaaaaa');
+      console.log(action.payload);
+      console.log(state.lists.filter(({id}) => id !== action.payload.id));
+      const editList = [
+        ...state.lists.filter(({id}) => id !== action.payload.id),
+        action.payload,
+      ];
+      return {
+        lists: editList,
+        nextId: state.nextId,
+      };
     default:
       return state;
   }
